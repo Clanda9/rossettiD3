@@ -5,8 +5,6 @@ var height= 1080
 var svg = d3.select("body") .append("svg")
   	.attr("width", width)
   	.attr("height", height)
-  
-    
     
  var data=[50,45,105,69,80,55,200,100,10,5,23,42,80,65]
     
