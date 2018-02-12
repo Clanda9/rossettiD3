@@ -1,12 +1,16 @@
+    // FOR INFO ON SCALES https://github.com/d3/d3-scale
+    //OTHER TYPES OF SCALES Continuous (Linear, Power, Log, Identity, Time) 
+    //SequentiaL, Quantize, Quantile, Threshold, Ordinal (Band, Point)
     
-	var width= 800 //pixel canvas
-	var height= 400
     
-	var svg = d3.select("body") .append("svg")
+var width= 800 //pixel canvas
+var height= 400
+    
+var svg = d3.select("body") .append("svg")
   .attr("width", width)
   .attr("height", height)
   
-	 var data=		  [50,45,105,69,80,55,200,100,10,5,23,42,80,65]
+	 var data=[50,45,105,69,80,55,200,100,10,5,23,42,80,65]
     
    var circle=svg.selectAll("circle")
    .data(data)
@@ -24,7 +28,7 @@
      
 //COLOR SCALE  
      var color= d3.scaleLinear()
-			.domain(data)
+		.domain(data)
   		.range (["steelblue","red"])
 
      //why is red mapping first?
@@ -34,13 +38,13 @@
      var circle1=svg.append ("circle")
     circle
         .attr("cx", function(d){
-      return scale(d)
-    })  
-			.attr("cy", 200) 						
+     	 return scale(d)
+   	 })  
+	.attr("cy", 200) 						
     	.attr("r", 40)	        	
     	.attr("fill",function(d){
         return color(d)
-    })
+    	})
     	.attr("fill-opacity", .5)	
     	.attr("stroke", "black")	  
     	.attr("stroke-width",4)
